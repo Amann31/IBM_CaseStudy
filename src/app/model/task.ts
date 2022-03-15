@@ -5,7 +5,7 @@ export class Task {
   public taskDescription:string | undefined;
   public completed:boolean | undefined;
   public startDate:string | undefined;
-  public endDate:boolean | undefined;
+  public endDate:string | undefined;
   public assignedBy:string | undefined;
   public assignedTo:string | undefined;
   public actions: boolean | undefined;

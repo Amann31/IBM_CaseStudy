@@ -7,6 +7,7 @@ import {Observable} from "rxjs";
 })
 export class TaskService {
   private baseUrl = "http://localhost:9090";
+  private deleteUrl = 'http://localhost:9090/delete';
 
   constructor(private http: HttpClient) { }
 
@@ -18,15 +19,15 @@ export class TaskService {
     return this.http.post(`${this.baseUrl}/create`, task);
   }
 
-  getTask(uniqueTaskId:number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/find/${uniqueTaskId}`);
+  getTask(id:number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/find/${id}`);
   }
 
-  deleteTask(uniqueTaskId:number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/delete/${uniqueTaskId}}`);
+  deleteTask(id:number): Observable<any> {
+    return this.http.delete(`${this.deleteUrl}/${id}`);
   }
 
-  updateTask(uniqueTaskId:number, value:any) : Observable<Object> {
-    return this.http.put(`${this.baseUrl}/update/${uniqueTaskId}`,value);
+  updateTask(id:number, value:any) : Observable<Object> {
+    return this.http.put(`${this.baseUrl}/update/${id}`,value);
   }
 }

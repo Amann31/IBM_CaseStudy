@@ -33,6 +33,6 @@ export class TaskListComponent implements OnInit {
 
   taskDetails(uniqueTaskId:number)
   {
-    this.router.navigate(['/details', uniqueTaskId]);
+    this.router.navigate(['/find', uniqueTaskId]);
   }
 }
